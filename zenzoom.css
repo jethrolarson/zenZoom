@@ -1,7 +1,7 @@
-.zoom{cursor:url(projects/zoom/zoomin.cur), url(zoomin.cur), pointer;}
+.zoom{cursor:url(projects/zenzoom/zoomin.cur), url(zoomin.cur), pointer;}
 #zoom,
 body.zoomOn,
-body.zoomOn *{cursor: url(projects/zoom/zoomout.cur), url(zoomout.cur), pointer !important;}
+body.zoomOn *{cursor: url(projects/zenzoom/zoomout.cur), url(zoomout.cur), pointer !important;}
 .zoom.loading{cursor:wait;}
 .noZoom{cursor: default;}
 #zoom{
