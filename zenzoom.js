@@ -24,26 +24,26 @@ $(function() {
             ww = $(window).width() - 24,
             wh = $(window).height() - 30,
             w=$t.width(),h=$t.height();
-        if(w>ww){
-          w = ww;
-          $t.width(w);
-        }
         if(h>wh){
           h = wh;
           $t.height(wh);
         }
+        if(w>ww){
+          w = ww;
+          $t.width(w);
+        }
         w = $t.width();
         h = $t.height();
-        $zoom.animate({
+        $zoom.css("opacity",.4).animate({
           width: w,
           height: h,
           left: $(window).scrollLeft() + (ww / 2) - (w / 2),
-          top: $(window).scrollTop() + (wh / 2) - (h / 2) +12,
-          opacity: 1
+          top: $(window).scrollTop() + (wh / 2) - (h / 2) +12
         },
         300,
         function() {
           $t.fadeIn(300);
+          $zoom.css("opacity",1)
         });
         $that.removeClass("loading");
         $("body").addClass('zoomOn');
@@ -55,12 +55,11 @@ $(function() {
     function zoomOut() {
       var $img = $zoom.data("img");
       $("body").removeClass('zoomOn');
-      $zoom.children("img").hide().end().animate({
+      $zoom.css("opacity",.4).children("img").hide().end().animate({
         height: $img.height(),
         width: $img.width(),
         left: $img.offset().left,
-        top: $img.offset().top,
-        opacity: .2
+        top: $img.offset().top
       }, 300, function() {
         $zoom.hide();
       });
