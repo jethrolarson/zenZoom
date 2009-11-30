@@ -1,0 +1,19 @@
+body{
+  margin: 0; padding: 0;
+  font: 16px/1.5 Verdana,sans-serif;
+  text-align: center;}
+
+ul,ol,li{margin:0;padding:0;}
+li{margin: 0 0 6px 20px;}
+ul,ol,p{margin: .5em 0 1em;}
+a{text-decoration: none;}
+a:visited{color: #2141D7;}
+a:hover{text-decoration:underline;}
+h1.tooltip, h2.tooltip, h3.tooltip,
+h1,h2,h3{
+  border-bottom: 2px solid #aaa;
+  font-family: Georgia; font-weight: normal;
+  color: #005289}
+div.tooltip{padding: 5px;border: 1px solid #2141D7;}
+#page{width: 600px; margin: 0 auto; text-align: left}
+  #footer{border-top: 2px solid #aaa}
