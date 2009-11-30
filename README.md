@@ -12,5 +12,15 @@ Usage
 
 TODO
 ----
-* I'd like to remove step 3 above. Add the cursor via script maybe?
-* Make proper demo page. In the meantime my [portfolio](http://jethrolarson.com/gallery) utilizes the plugin.
+* Remove step 3 above. Add the cursor via script maybe?
+* Make the margins of large images calculated based on the CSS.
+
+
+In the Wild
+-----------
+* [My Portfolio](http://jethrolarson.com/gallery) utilizes the plugin.
+* [elefy.com](http://elefy.com)
+
+----
+
+Licensed under [DWL](http://github.com/jethrolarson/dwl/raw/master/dwl.md)
