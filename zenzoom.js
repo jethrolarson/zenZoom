@@ -1,5 +1,5 @@
 $(function() {
-  $.fn.zoom = function() {
+  $.fn.zenZoom = function() {
     var $zoom = $('<div id="zoom"></div>').appendTo(document.body),
         $self = this;
     $self.live("click.zoomIn", function() {
@@ -22,7 +22,7 @@ $(function() {
         $zoom.show();
         var $t = $(this),
             ww = $(window).width() - 24,
-            wh = $(window).height() - 30,
+            wh = $(window).height() - 38,
             w=$t.width(),h=$t.height();
         if(h>wh){
           h = wh;
@@ -76,5 +76,5 @@ $(function() {
       }
     });
   };
-  $(".zoom").zoom();
+  $(".zoom").zenZoom();
 });
