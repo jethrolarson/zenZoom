@@ -2,7 +2,7 @@ $(function() {
   $.fn.zenZoom = function() {
     var $zoom = $('<div id="zoom"></div>').appendTo(document.body),
         $self = this;
-    $self.live("click.zoomIn", function() {
+    $self.bind("click.zoomIn", function() {
       var $that = $(this);
       if ($zoom.is(":visible")) {
         zoomOut();
