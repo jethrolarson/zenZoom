@@ -1,10 +1,14 @@
-$(function() {
-  $.fn.zenZoom = function() {
+/*: ZenZoom
+    #copyright 2010 Jethro Larson http://jethrolarson.com
+    #license MIT or GPL Version 2 licenses. Like jQuery http://jquery.org/license
+*/
+$(function(){
+  $.fn.zenZoom = function(){
     var $zoom = $('<div id="zoom"></div>').appendTo(document.body),
         $self = this;
-    $self.bind("click.zoomIn", function() {
+    $self.bind("click.zoomIn", function(){
       var $that = $(this);
-      if ($zoom.is(":visible")) {
+      if($zoom.is(":visible")){
         zoomOut();
         return false;
       }
@@ -18,7 +22,7 @@ $(function() {
         .height($img.height())
         .width($img.width());
       $that.addClass("loading");
-      $("<img src='" + this.href + "' style='display:none' />").load(function() {
+      $("<img src='" + this.href + "' style='display:none' />").load(function(){
         $zoom.show();
         var $t = $(this),
             ww = $(window).width() - 24,
@@ -41,18 +45,18 @@ $(function() {
           top: $(window).scrollTop() + (wh / 2) - (h / 2) +12
         },
         300,
-        function() {
+        function(){
           $t.fadeIn(300);
           $zoom.css("opacity",1)
         });
         $that.removeClass("loading");
         $("body").addClass('zoomOn');
-      }).bind("error", function() {
+      }).bind("error", function(){
         $that.removeClass("loading").removeClass("zoom").addClass("noZoom").unbind("click.zoomIn");
       }).appendTo($zoom.empty());
       return false;
     });
-    function zoomOut() {
+    function zoomOut(){
       var $img = $zoom.data("img");
       $("body").removeClass('zoomOn');
       $zoom.css("opacity",.4).children("img").hide().end().animate({
@@ -60,21 +64,20 @@ $(function() {
         width: $img.width(),
         left: $img.offset().left,
         top: $img.offset().top
-      }, 300, function() {
+      }, 300, function(){
         $zoom.hide();
       });
     }
-    $("body").click(function() {
-      if ($zoom.is(":visible")) {
+    $("body").click(function(){
+      if($zoom.is(":visible")){
         zoomOut();
         return false;
       }
-    }).keypress(function(e) {
-      if ($zoom.is(":visible") && e.keyCode == 27) {
+    }).keypress(function(e){
+      if($zoom.is(":visible") && e.keyCode == 27){
         zoomOut();
         return false;
       }
     });
   };
-  $(".zoom").zenZoom();
 });
