@@ -1,3 +1,7 @@
+/*: ZenZoom
+    #copyright 2010 Jethro Larson http://jethrolarson.com
+    #license MIT or GPL Version 2 licenses. Like jQuery http://jquery.org/license
+*/
 $(function() {
   $.fn.zenZoom = function() {
     var $zoom = $('<div id="zoom"></div>').appendTo(document.body),

@@ -8,7 +8,7 @@ Usage
 
 1. Include zenzoom.js and zenzoom.css
 2. Add class="zoom" to links you want to zoom. Links should point to the fullsize version.
-3. Change "projects/zenzoom/" to match the path from the page to the zenzoom directory (for IE)
+3. In zenzoom.css change "projects/zenzoom/" to match the path from the page to the zenzoom directory (for IE)
 
 TODO
 ----
@@ -18,7 +18,7 @@ TODO
 
 In the Wild
 -----------
-* [My Portfolio](http://jethrolarson.com/gallery) utilizes the plugin.
+* [My Portfolio](http://jethrolarson.com/gallery)
 * [elefy.com](http://elefy.com)
 
 ----
