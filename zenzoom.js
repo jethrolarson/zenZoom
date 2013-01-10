@@ -23,18 +23,18 @@ $(function() {
         var $t = $(this),
             ww = $(window).width() - 24,
             wh = $(window).height() - 38,
-            w=$t.width(),h=$t.height();
-        if(h>wh){
+            w = $t.width(), h = $t.height();
+        if(w > ww){
+          w = ww;
+          $t.width(w);
+        }else if(h > wh){
           h = wh;
           $t.height(wh);
         }
-        if(w>ww){
-          w = ww;
-          $t.width(w);
-        }
+        
         w = $t.width();
         h = $t.height();
-        $zoom.css("opacity",.4).animate({
+        $zoom.css("opacity", 0.4).animate({
           width: w,
           height: h,
           left: $(window).scrollLeft() + (ww / 2) - (w / 2),
@@ -43,7 +43,7 @@ $(function() {
         300,
         function() {
           $t.fadeIn(300);
-          $zoom.css("opacity",1)
+          $zoom.css("opacity", 1);
         });
         $that.removeClass("loading");
         $("body").addClass('zoomOn');
@@ -55,7 +55,7 @@ $(function() {
     function zoomOut() {
       var $img = $zoom.data("img");
       $("body").removeClass('zoomOn');
-      $zoom.css("opacity",.4).children("img").hide().end().animate({
+      $zoom.css("opacity", 0.4).children("img").hide().end().animate({
         height: $img.height(),
         width: $img.width(),
         left: $img.offset().left,
@@ -76,5 +76,8 @@ $(function() {
       }
     });
   };
-  $(".zoom").zenZoom();
+  //Disabling zen zoom if window is small, as the OS can do a better job
+  if($(window).width() > 500){
+    $(".zoom").zenZoom();
+  }
 });
